@@ -1,18 +1,11 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
-import { Login } from './view/Login/Login';
+import { Login } from './views/Login/Login'
+import { Home } from './views/Home/Home'
 
 const App = () => {
-  return(
-    <Login btn="test"/>
+  return (
+    <Home/>
   );
 };
+
 export default App;
-  

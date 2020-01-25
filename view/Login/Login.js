@@ -22,11 +22,12 @@ export class Login extends React.Component {
       }
  }
  componentDidMount(){
-    this._getLogin("Fang")
+    // this._getLogin("Fang")
  }
 
-_getLogin(param = 'test'){
-    Alert.alert("Function", "_getLogin " + param)
+_getLogin(name = 'test'){
+    // this.setState.username = psw
+    Alert.alert("Function", this.state.username + " " + this.state.password)
 }
 
  render(){
@@ -42,6 +43,11 @@ _getLogin(param = 'test'){
                                 underlineColorAndroid='transparent'
                                 style={{ color:"#fff",flex:1,fontSize:16, paddingLeft: 12,}}
                                 value = {this.state.username}
+                                onChangeText = {(username) => {
+                                    this.setState({
+                                        username: username
+                                    })
+                                }}
                             />
                         </View>
                         <View style={[ styles.row_underline,{ marginBottom:24, }]}>
@@ -52,6 +58,11 @@ _getLogin(param = 'test'){
                                 style={{ color:"#fff",flex:1,fontSize:16, paddingLeft: 12,}}
                                 secureTextEntry={true}
                                 value = {this.state.password}
+                                onChangeText = {(password) => {
+                                    this.setState({
+                                        password: password
+                                    })
+                                }}
                             />
                         </View>
                         <TouchableOpacity style={{ flex:1, backgroundColor:"#1B70E3", borderRadius: 2 ,paddingLeft: 10,}} onPress={() => this._getLogin()}>
