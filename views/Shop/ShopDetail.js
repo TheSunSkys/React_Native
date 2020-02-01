@@ -43,6 +43,7 @@ export class ShopDetail extends React.Component {
                         alert: 'network-failed',
                     });
                 }else if (response.data.length == 0) {
+                    this.props.navigation.goBack()
                     this.setState({
                         loading: false,
                         alert: 'not-found',
